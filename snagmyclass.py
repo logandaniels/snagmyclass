@@ -71,11 +71,11 @@ def register(courseID):
     br.select_form(name="addNowForm") # Select the course add form
     br["courseNbr"] = courseID
     response = br.submit()
-
-    # Grading basis
+    pageText = response.read()
     br.select_form(name="addClassStep2")
-    br["gBasis"] = ["A-F"]  # Can support pass/fail later
-
+    # Grading basis
+    if "grade basis" not in pageText.lower(): # skip if class is A-F only
+        br["gBasis"] = ["A-F"]  # Can support pass/fail later
     response = br.submit()  # Submit form to finalize course add
     pageText = response.read()
     if "error" in pageText.lower() or courseID not in pageText:
