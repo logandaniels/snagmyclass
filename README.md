@@ -1,10 +1,9 @@
-#Deprecated
+#Obsolete
 As of the 2015 UMN Peoplesoft upgrade, Snag My Class no longer works.
 
 ---
 
-Snag My Class
-===========
+##Snag My Class
 
 Automates course registration at the University of Minnesota, Twin Cities.
 
